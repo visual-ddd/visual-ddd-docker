@@ -1,0 +1,56 @@
+# 文档地址 https://docs.docker.com/compose/
+# docker compose 协议地址：https://docs.docker.com/compose/compose-file/05-services/
+# 启动 docker compose up -d
+version: '3.9'
+services:
+  # 客户端
+  client:
+    # image: registry.cn-guangzhou.aliyuncs.com/visual-ddd/chat-dream-art:latest
+    image: registry.cn-guangzhou.aliyuncs.com/visual-ddd/chat:latest
+    restart: always
+    ports:
+      - '3000:3000'
+      - '9229:9229' # DEBUG
+    environment:
+      SECRET: '5whAPFrb3wRtNzDKHQnJh8CLGx5WXJXWs1pk5AT33FqYD'
+      #PINECONE_INDEX:
+      #PINECONE_ENVIRONMENT
+      #PINECONE_API_KEY
+      AI_CONFIGURATION: '[{"type":"azure","basePath":"https://talktoai.openai.azure.com/openai/deployments/GPT35","key":"594c5a081c74456aaa3a432ea0877da0","user":"test"}]'
+      BACKEND: http://server:8080
+      #NODE_OPTIONS: NODEJS 配置项 # --inspect=0.0.0.0
+
+  # 后端服务
+  server:
+    image: registry.cn-guangzhou.aliyuncs.com/visual-ddd/server:0.0.1-SNAPSHOT
+    restart: always
+    ports:
+      - '8080:8080'
+    environment:
+      common.mysql.url: jdbc:mysql://db:3306/wd_visual_ddd?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+      common.mysql.username: root
+      common.mysql.password: root
+    links:
+      - mysql:db
+    depends_on:
+      - mysql
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  # 数据库
+  mysql:
+    image: mysql:8.0.22
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - /var/mysql/db:/var/lib/mysql
+      - /var/mysql/logs:/var/log
+      - ./mysql/conf:/etc/mysql/conf.d
+      # 数据库还原目录 可将需要还原的sql文件放在这里
+      - ./mysql/source:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wd_visual_ddd

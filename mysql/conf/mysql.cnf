@@ -1,0 +1,30 @@
+[mysqld]
+# 数据库存储目录
+datadir=/var/lib/mysql
+# 通信套接字文件路径
+socket=/var/run/mysqld/mysqld.sock
+
+# 以下是一些常用的配置项，根据需求进行设置
+# 设置 MySQL 的默认字符集
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+
+# 设置 MySQL 可以使用的最大内存
+max_allowed_packet=256M
+
+# 设置 MySQL 的默认时区
+default-time-zone=+08:00
+
+# 设置 MySQL 的最大连接数
+max_connections=100
+
+# 设置 MySQL 接受的最大连接数
+max_connect_errors=1000
+
+# 禁用 MySQL 的 DNS 反向解析，提高性能
+skip-name-resolve
+
+# 开启日志
+general_log_file        = /var/log/mysql/mysql.log
+general_log             = 1
+
