@@ -22,7 +22,7 @@ services:
 
   # 后端服务
   server:
-    image: registry.cn-guangzhou.aliyuncs.com/visual-ddd/server:0.0.1-SNAPSHOT
+    image: registry.cn-guangzhou.aliyuncs.com/visual-ddd/server:lastest
     restart: always
     ports:
       - '8080:8080'
