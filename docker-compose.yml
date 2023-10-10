@@ -11,6 +11,7 @@ services:
       - '3000:3000'
       # - '9229:9229' # DEBUG
     environment:
+      # 更多设置：https://github.com/visual-ddd/visual-ddd-client/blob/main/deployment/README.md
       # SESSION 密钥
       SECRET: '请自行生成32位随机值'
       BACKEND: http://server:8080
