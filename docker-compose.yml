@@ -5,11 +5,11 @@ version: '3.9'
 services:
   # 客户端
   client:
-    image: visualddd/client:latest
+    image: visualddd/client:0.5.3-pre-free
     restart: always
     ports:
       - '3000:3000'
-      - '9229:9229' # DEBUG
+      # - '9229:9229' # DEBUG
     environment:
       # SESSION 密钥
       SECRET: '请自行生成32位随机值'
@@ -22,7 +22,7 @@ services:
 
   # 多人协作服务器
   collab:
-    image: visualddd/collab-server:latest
+    image: visualddd/collab-server:0.5.3-pre
     ports:
       - '9090:9090'
     environment:
@@ -31,7 +31,7 @@ services:
   # 后端服务
   server:
     # TODO 后端服务镜像不确定
-    image: visualddd/server:latest
+    image: visualddd/server:0.0.2-SNAPSHOT
     restart: always
     ports:
       - '8080:8080'
