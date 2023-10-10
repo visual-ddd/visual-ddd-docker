@@ -11,11 +11,14 @@ services:
       - '3000:3000'
       - '9229:9229' # DEBUG
     environment:
-      SECRET: '<%= SECRET %>'
+      # SESSION 密钥
+      SECRET: '请自行生成32位随机值'
       BACKEND: http://server:8080
-      #AI_CONFIGURATION: AI 配置
-      #NODE_OPTIONS: NODEJS 配置项 # --inspect=0.0.0.0
+      # AI_CONFIGURATION: '添加AI配置'
+      # NODE_OPTIONS: NODEJS 配置项 # --inspect=0.0.0.0
       REDIS: redis://redis:6379/1
+      DEFAULT_PLAN: free
+      FREE_ACCOUNT_COUNT_LIMIT: 100
 
   # 多人协作服务器
   collab:
@@ -86,4 +89,4 @@ services:
   #     # certbot 生成的 HTTP 验证文件
   #     - ./certbot/www:/usr/share/certbot/www:ro
   #     # certbot 生成的证书文件
-      - ./certbot/ssl:/usr/share/certbot/ssl:ro
+  # - ./certbot/ssl:/usr/share/certbot/ssl:ro
