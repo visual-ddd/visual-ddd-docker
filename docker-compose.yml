@@ -89,4 +89,4 @@ services:
   #     # certbot 生成的 HTTP 验证文件
   #     - ./certbot/www:/usr/share/certbot/www:ro
   #     # certbot 生成的证书文件
-  # - ./certbot/ssl:/usr/share/certbot/ssl:ro
+  #     - ./certbot/ssl:/usr/share/certbot/ssl:ro
