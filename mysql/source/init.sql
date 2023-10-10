@@ -41,7 +41,7 @@ create table if not exists wd_account
     icon        varchar(255) null comment '用户头像'
 );
 
-INSERT INTO wd_account (id, create_by, create_time, update_by, update_time, account_no, description, password, user_name, uuid, icon) VALUES (1, '0', '2023-01-05 14:38:09', '系统管理员', '2023-04-07 10:20:17', 'visualddd@wakedata.com', '', '123456', '系统管理员', '70c5c3a3-aee3-40f4-9be4-6e565a984793', '');
+INSERT INTO wd_account (id, create_by, create_time, update_by, update_time, account_no, description, password, user_name, uuid, icon) VALUES (1, '0', '2023-01-05 14:38:09', '系统管理员', '2023-04-07 10:20:17', 'admin@visualddd.com', '', '123456', '系统管理员', '70c5c3a3-aee3-40f4-9be4-6e565a984793', '');
 
 create table if not exists wd_account_verification
 (
