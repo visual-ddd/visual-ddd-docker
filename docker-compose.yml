@@ -23,7 +23,7 @@ services:
 
   # 多人协作服务器
   collab:
-    image: visualddd/collab-server:lateset
+    image: visualddd/collab-server:latest
     ports:
       - '9090:9090'
     environment:
