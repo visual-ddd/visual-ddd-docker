@@ -31,7 +31,6 @@ services:
 
   # 后端服务
   server:
-    # TODO 后端服务镜像不确定
     image: visualddd/server:0.0.2-SNAPSHOT
     restart: always
     ports:
