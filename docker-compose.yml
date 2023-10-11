@@ -11,15 +11,15 @@ services:
       - '3000:3000'
       # - '9229:9229' # DEBUG
     environment:
-      # 更多设置：https://github.com/visual-ddd/visual-ddd-client/blob/main/deployment/README.md
-      # SESSION 密钥
-      SECRET: '请自行生成32位随机值'
+      # 更多设置：https://github.com/visual-ddd/visual-ddd-client/blob/main/DEVEPLOMENT.md
+      SECRET: '请自行生成32位随机值'   # SESSION 密钥
       BACKEND: http://server:8080
       # AI_CONFIGURATION: '添加AI配置'
       # NODE_OPTIONS: NODEJS 配置项 # --inspect=0.0.0.0
       REDIS: redis://redis:6379/1
       DEFAULT_PLAN: free
       FREE_ACCOUNT_COUNT_LIMIT: 100
+      HTTPS: false  # 默认关闭https
 
   # 多人协作服务器
   collab:
