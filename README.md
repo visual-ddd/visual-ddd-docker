@@ -1,11 +1,6 @@
 # visual-ddd-docker
 Docker部署DDD可视化开发者平台
 
-[![Downloads][downloads-shield]][plugin-repo]
-[![Rating][Rating-shield]][plugin-repo]
-[![Version][version-shield]][plugin-repo]
-[![Contributions welcome][contributions-welcome-svg]][contributions-welcome]
-
 ## 准备工作
 
 在开始部署之前，请确保已完成以下准备工作：
@@ -46,15 +41,3 @@ docker-compose down
 
 希望以上部署说明对你有帮助！如有任何疑问，请随时向我提问。
 
-
-[downloads-shield]: https://img.shields.io/jetbrains/plugin/d/21056-codegpt
-[version-shield]: https://img.shields.io/jetbrains/plugin/v/21056-codegpt?label=version
-[rating-shield]: https://img.shields.io/jetbrains/plugin/r/rating/21056-codegpt
-[contributions-welcome-svg]: http://img.shields.io/badge/contributions-welcome-brightgreen
-[contributions-welcome]: #
-[marketplace-img]: docs/assets/marketplace.png
-[plugin-repo]: https://plugins.jetbrains.com/plugin/21056-codegpt
-[plugin-settings]: docs/assets/plugin-settings.png
-[open-issues]: https://github.com/carlrobertoh/CodeGPT/issues
-[api-key-url]: https://platform.openai.com/account/api-keys
-[portfolio]: https://carlrobert.ee
