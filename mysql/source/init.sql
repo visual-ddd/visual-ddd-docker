@@ -241,3 +241,24 @@ create table if not exists wd_white_list
     account_no  varchar(255) null,
     description varchar(255) null
 );
+
+create table wd_ai_usage_statistics
+(
+    id              bigint auto_increment
+        primary key,
+    create_by       varchar(40)  null comment '创建人',
+    create_time     datetime     null comment '创建时间',
+    update_by       varchar(40)  null comment '更新人',
+    update_time     datetime     null comment '更新时间',
+    account         varchar(255) null,
+    business_code   varchar(255) null,
+    business_desc   varchar(255) null,
+    model           varchar(255) null,
+    report_source   varchar(255) null,
+    request_time    varchar(255) null,
+    request_tokens  int          null,
+    response_tokens int          null,
+    total_tokens    int          null,
+    user_id         varchar(255) null
+)
+
