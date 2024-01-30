@@ -1,6 +1,6 @@
 # Deploy Visual-DDD with Docker
 
-[Chinese Version](README-ZH.md) | 中文版本
+[中文版本](README-ZH.md) | [English Version](README.md)
 
 GitHub Repository: [Visual-DDD Docker Deployment](https://github.com/visual-ddd/visual-ddd-docker)
 
