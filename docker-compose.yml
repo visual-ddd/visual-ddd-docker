@@ -31,7 +31,7 @@ services:
 
   # 后端服务
   server:
-    image: visualddd/server:0.0.2-SNAPSHOT
+    image: visualddd/server:1.0.2-RC03
     restart: always
     ports:
       - '8080:8080'
@@ -39,6 +39,23 @@ services:
       common.mysql.url: jdbc:mysql://db:3306/wd_visual_ddd?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowMultiQueries=true&autoReconnect=true
       common.mysql.username: root
       common.mysql.password: root
+      # 注册邮箱域名限制，默认不开启
+      register.mail.suffix-configs: wakedata.com
+      register.whitelist.enable: 'false'
+      # rabbitmq配置，默认不需要
+      common.mq.message.default-type: rabbitMq
+      common.mq.rabbitmq.bootstrap-servers: 172.26.57.49
+      common.mq.rabbitmq.username: guest
+      common.mq.rabbitmq.password: guest
+      # email发邮件，设置发邮件的账号
+      spring.mail.host: 'host'
+      spring.mail.username: 'username'
+      spring.mail.password: 'password'
+      spring.mail.properties.mail.smtp.auth: 'false'
+      spring.mail.properties.mail.smtp.starttls.enable: 'false'
+      spring.mail.properties.mail.smtp.starttls.required: 'false'
+      # 指定后端url地址，用于拼接密码重置路径
+      password-reset.url.config: 'server.url'
     links:
       - mysql:db
     depends_on:
