@@ -1,6 +1,6 @@
 # Docker部署Visual-DDD
 
-GitHub地址：[Docker部署DDD可视化开发者平台](https://github.com/visual-ddd/visual-ddd-docker)
+[中文版本](README-ZH.md) | [English Version](README.md)
 
 ## 准备工作
 
