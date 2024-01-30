@@ -67,6 +67,11 @@ docker-compose up -d
 ```shell
 docker-compose down
 ```
+6. 访问地址 服务器ip:3000，登录管理员初始化账号
+```
+账号：admin@visualddd.com
+密码：123456
+```
 
 ## 注意事项
 
